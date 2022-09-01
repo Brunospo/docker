@@ -1,0 +1,32 @@
+# Comentários
+
+objPessoa1:
+  nome: "bruno"
+  sobrenome: Oliveira
+  idade: 23
+  altura: 1.83
+
+objPessoa2: {nome: isabele, idade: 20}
+
+null1: null
+null2: ~
+
+verdadeiro1: True
+verdadeiro2: true
+verdadeiro3: on
+verdadeiro4: On
+
+falso1: False
+falso2: false
+falso3: off
+falso4: Off
+
+array1: [maca, uva, pera]
+array2: 
+  - melancia
+  - melao
+array3: 
+  -
+    morango
+    goiaba
+    abacaxi
