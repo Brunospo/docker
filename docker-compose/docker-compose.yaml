@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+ database:
+   image: postgres
+   environment: 
+    - POSTGRES_PASSWORD=msp
+   restart: always
+   networks: 
+    - testedc
+   container_name: pgdc
+   volumes:
+     - testevolumedc:/var/lib/postgresql/data
+  
+ api: 
+   depends_on: 
+    - pgdc
+   build: .
+   ports:
+     - 3000:3000
+   restart: always
+   env_file: ./.env
+   networks:
+     - testedc
+   volumes:
+     - .:/app
+
+volumes: 
+  testevolumedc: {}
+networks:
+  testedc:
