@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-declarativo #Nome do deployment, semelhante ao do kubectl create deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deployment-declarativo #Nome do Pod, no qual será vigiado para criação das replicas
+  template: #O Pod que será criado nas replicas
+    metadata:
+      labels:
+        app: deployment-declarativo
+    spec:
+      containers:
+      - name: teste-deployment-declarativo
+        image: brunospo/k8s-project:latest
+        ports:
+        - containerPort: 3000
